@@ -39,13 +39,14 @@ export default function Add(){
                 category
             })
 
-            const data = await linkStorage.get()
-            console.log(data)
-
         } catch (error){
             Alert.alert("Erro", "Não foi possivel salvar o link")
             console.log(error)
         }
+
+        Alert.alert("Sucesso", "Novo link adicionado", [
+            { text: "Ok", onPress: () => router.back() }
+        ])
     }
 
     return (
